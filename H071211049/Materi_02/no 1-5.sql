@@ -1,19 +1,23 @@
-select * from offices;
+-- no. 1
 select * from offices where city="San Francisco";
 
+-- no. 2
 select * from orderdetails 
 where quantityOrdered > 70
-order by orderLineNumber desc;
+order by orderLineNumber asc;
 
-select productLine from products;
+-- no. 3
+select distinct productLine from products;
 
+-- no. 4
 select customerNumber nomorPelanggan, customerName namaPelanggan from customers
 where customerNumber between 100 and 150;
 
+-- no. 5
 select * from customers 
-where country not in ("USA") and creditLimit=0
+where country !=("USA") and creditLimit=0
 order by customerName asc
-limit 9, 10;
+limit 10, 10;
 
 select distinct productLine from products;
 
