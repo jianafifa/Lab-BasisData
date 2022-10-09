@@ -1,0 +1,14 @@
+-- USE classicmodels;
+-- nmor 1
+-- INSERT INTO employees (employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle)
+-- VALUES (1700, 'magfirah', 'andi', 'x2300', 'fira@gmail.com', '3', '1,002', 'nutritionists'),
+-- (1116, 'Afifah', 'Jihan', 'x2900', 'jihan@gmail.com', '1', '1,056', 'data scientists'),
+-- (1257, 'erlina', 'devi', 'x1600', 'devi@gmail.com', '1', '1,088', 'traveler');
+-- nomor 2
+-- INSERT INTO offices (officeCode, city, phone, addressline1, country, postalCode, territory) VALUES ('9', 'Aceh', '083450502020', 'jln kenangan', 'indonesia', '94119', 'Banda aceh');
+-- UPDATE employees SET officeCode = '3'
+-- WHERE officeCode='4' AND jobTitle='sales rep';
+-- DESC offices;
+-- nomor 3
+-- DELETE FROM payments WHERE amount < 10000;
+-- SELECT amount FROM payments;
