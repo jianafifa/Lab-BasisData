@@ -7,7 +7,7 @@ inner join orders as o
 on od.orderNumber = o.orderNumber
 where productName = "1940 Ford Pickup Truck" order by orderDate desc
 -- no 2
-select p.productName,p.productCode, od.priceEach,p.MSRP as "80%.MSRP"
+select p.productName,p.productCode, od.priceEach,p.MSRP*0.8 as "80%.MSRP"
 from products as p
 inner join orderdetails as od
 on p.productCode = od.productCode
