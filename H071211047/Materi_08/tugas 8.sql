@@ -1,0 +1,53 @@
+-- USE appseminar;
+-- USE classicmodels;
+
+-- nomor 1
+-- SELECT m.nama, m.nim as 'NIM/NIP', p.nama as 'program studi' FROM ss_mahasiswa AS m
+-- JOIN ss_prodi AS p
+-- USING (id_prodi)
+-- WHERE p.nama = 'Ilmu Komputer'
+-- UNION
+-- SELECT d.nama, d.nip, p.nama FROM ss_dosen AS d
+-- JOIN ss_prodi AS p
+-- USING (id_prodi)
+-- WHERE p.nama = 'Ilmu Komputer';
+
+-- nomor 2
+-- SELECT nama, prodi, group_concat(riwayat) AS riwayat FROM (
+-- SELECT distinct d.nama, p.nama AS prodi, "pembimbing utama" AS riwayat FROM ss_dosen AS d
+-- JOIN ss_prodi AS p
+-- USING (id_prodi)
+-- JOIN ss_pembimbing AS g
+-- ON g.id_pembimbing_utama = d.id_dosen
+-- UNION
+-- SELECT distinct d.nama, p.nama AS prodi, "pembimbing pertama" AS riwayat FROM ss_dosen AS d
+-- JOIN ss_prodi AS p
+-- USING (id_prodi)
+-- JOIN ss_pembimbing AS g
+-- ON g.id_pembimbing_pertama = d.id_dosen
+-- UNION
+-- SELECT distinct d.nama, p.nama AS prodi, "penguji 1" AS riwayat FROM ss_dosen AS d
+-- JOIN ss_prodi AS p
+-- USING (id_prodi)
+-- JOIN ss_penguji AS g
+-- ON g.id_penguji_1 = d.id_dosen
+-- UNION
+-- SELECT distinct d.nama, p.nama AS prodi, "penguji 2" AS riwayat FROM ss_dosen AS d
+-- JOIN ss_prodi AS p
+-- USING (id_prodi)
+-- JOIN ss_penguji AS g
+-- ON g.id_penguji_2 = d.id_dosen) AS z
+-- GROUP BY nama, prodi;
+
+-- nomor 3
+-- SELECT city FROM (
+-- SELECT customerName, city FROM customers
+-- WHERE customerName LIKE "L%"
+-- UNION
+-- SELECT e.firstName, o.city FROM employees AS e
+-- JOIN offices AS o
+-- USING (officeCode)
+-- WHERE e.firstName LIKE "L%") AS X
+-- GROUP BY city
+-- ORDER BY count(customerName) DESC
+-- LIMIT 1;
